@@ -11,8 +11,9 @@ function signup() {
       </div>
       <div>
         <h1 className='font-primary text-[50px] drop-shadow-lg my-[70px] mr-[150px]'>Sign Up</h1>
-        <div>
-          <input type='text' className='border-b outline-none'/> <FaUser size={20}/>
+        <div className='flex items-center border-b-2 border-black'>
+        <FaUser size={20}/>
+          <input type='text' className='p-2 outline-none' placeholder='Name'/> 
         </div>
       </div>
     </div>
