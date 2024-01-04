@@ -12,7 +12,7 @@ function signup() {
       <div>
         <h1 className='font-primary text-[50px] drop-shadow-lg my-[70px] mr-[150px]'>Sign Up</h1>
         <div>
-          <input type='static' className='border-b'/> <FaUser size={20}/>
+          <input type='text' className='border-b outline-none'/> <FaUser size={20}/>
         </div>
       </div>
     </div>
