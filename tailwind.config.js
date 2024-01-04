@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {fontFamily:{
+      'primary':['Passion One'],
+      'secondary':['Abhaya Libre']
+    }},
   },
   plugins: [],
 }
