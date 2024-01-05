@@ -9,14 +9,14 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 function login() {
   return (
     <div>
-      <div className="flex">
+      <div className="flex items-center justify-center h-screen">
         <div className="flex flex-col justify-center items-center">
           <img
             src={image}
             alt="beldex signup"
-            className="h-[350px] w-[300px] ml-[350px] mt-[100px]"
+            className="h-[350px] w-[300px]"
           />
-          <button className="font-secondary text-[15px] pl-[330px] pt-[5px] underline underline-offset-4 hover:text-red-500">
+          <button className="font-secondary text-[15px] pt-[5px] underline underline-offset-4 hover:text-red-500">
             Create an Account
           </button>
         </div>
@@ -45,7 +45,7 @@ function login() {
           <div>
             <button
               type="submit"
-              className="h-[30px] w-[65px] bg-[#3384D3CF] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#79b0e4] hover:text-black">
+              className="h-[30px] w-[65px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1] ">
               Login
             </button>
           </div>
