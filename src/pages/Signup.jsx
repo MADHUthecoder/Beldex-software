@@ -54,22 +54,23 @@ function Signup() {
         <div className="flex items-center border-b-2 border-black mt-[20px] ml-[30px]">
           <FaLock size={20} />
           <input
-            type="password"
+            type={state}
             className="p-2 outline-none font-secondary text-[20px]"
             placeholder="Password"
             required
           />
           <label htmlFor='showpassword' className='font-secondary'>
-            <input type="checkbox" id="showpassword" name="showpassword"/>
+            <input type="checkbox" id="showpassword" name="showpassword" />
               Show Password
+          </label>
           {
             showPassword && (
-              <input type='text' className="p-2 outline-none font-secondary text-[20px]"
-              onChange={() => setShowPassword(!showPassword)}
-            />
+            onClick{()=> setShowPassword(state? 'true':'false')}
+
+            
             )
           }
-          </label>
+
         </div>
         <div>
           <Link to='/maintree'
