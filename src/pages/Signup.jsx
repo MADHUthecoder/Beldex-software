@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image from '../images/signup-image.jpg'
 import { FaUser } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { ImProfile } from "react-icons/im";
 import { FaLock } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
-function signup() {
+function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="flex">
       <div className="flex flex-col justify-center items-center">
@@ -14,9 +16,9 @@ function signup() {
           alt="beldex signup"
           className="h-[400px] w-[415px] ml-[275px] mt-[85px]"
         />
-        <button className="font-secondary text-[15px] pl-[207px] pt-[5px] underline underline-offset-4 hover:text-red-500">
+        <Link to='/login' className="font-secondary text-[15px] pl-[207px] pt-[5px] underline underline-offset-4 hover:text-red-500">
           I am already a member
-        </button>
+        </Link>
       </div>
       <div>
         <h1 className="flex flex-col font-primary text-[50px] drop-shadow-lg mt-[60px] mr-[150px]">
@@ -57,18 +59,29 @@ function signup() {
             placeholder="Password"
             required
           />
+          <label htmlFor='showpassword' className='font-secondary'>
+            <input type="checkbox" id="showpassword" name="showpassword"/>
+              Show Password
+          {
+            showPassword && (
+              <input type='text' className="p-2 outline-none font-secondary text-[20px]"
+              onChange={() => setShowPassword(!showPassword)}
+            />
+            )
+          }
+          </label>
         </div>
         <div>
-          <button
+          <Link to='/maintree'
             type="submit"
-            className="h-[30px] w-[65px] bg-[#3384D3CF] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#79b0e4] hover:text-black"
+            className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1]"
           >
             Register
-          </button>
+          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default signup
+export default Signup
