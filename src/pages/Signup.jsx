@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Signup() {
   const [typeState,setTypeState] = useState("password");
-  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex">
       <div className="flex flex-col justify-center items-center">
@@ -61,7 +61,7 @@ function Signup() {
             required
           />
           <label htmlFor='showpassword' className='font-secondary'>
-            <input onClick={() => typeState == "password" ? setTypeState("name") : setTypeState("password")} type="checkbox" id="showpassword" name="showpassword" />
+            <input onClick={() => typeState === "password" ? setTypeState("text") : setTypeState("password")} type="checkbox" id="showpassword" name="showpassword" />
               Show Password
           </label>
 
