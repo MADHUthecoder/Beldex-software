@@ -7,6 +7,7 @@ import { FaLock } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 function Signup() {
+  const [typeState,setTypeState] = useState("password");
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="flex">
@@ -54,22 +55,16 @@ function Signup() {
         <div className="flex items-center border-b-2 border-black mt-[20px] ml-[30px]">
           <FaLock size={20} />
           <input
-            type={state}
+            type={typeState}
             className="p-2 outline-none font-secondary text-[20px]"
             placeholder="Password"
             required
           />
           <label htmlFor='showpassword' className='font-secondary'>
-            <input type="checkbox" id="showpassword" name="showpassword" />
+            <input onClick={() => typeState == "password" ? setTypeState("name") : setTypeState("password")} type="checkbox" id="showpassword" name="showpassword" />
               Show Password
           </label>
-          {
-            showPassword && (
-            onClick{()=> setShowPassword(state? 'true':'false')}
 
-            
-            )
-          }
 
         </div>
         <div>
