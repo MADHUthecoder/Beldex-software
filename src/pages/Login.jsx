@@ -7,7 +7,7 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
-function login() {
+function Login() {
   return (
     <div>
       <div className="flex items-center justify-center h-screen">
@@ -63,4 +63,4 @@ function login() {
   );
 }
 
-export default login
+export default Login

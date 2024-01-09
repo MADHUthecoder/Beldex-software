@@ -1,9 +1,11 @@
 import React from 'react'
+import TreeStructure from '../components/TreeStructure';
+
 
 
 function Maintree() {
-  return (
-    <div>Maintree</div>
+  return(
+    <TreeStructure username="MADHUVARSHAGCC01"/>
   )
 }
 

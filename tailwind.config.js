@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {fontFamily:{
       'primary':['Passion One'],
-      'secondary':['Abhaya Libre']
+      'secondary':['Abhaya Libre'],
+      'tertiary':['PT Serif']
     }},
   },
   plugins: [],
