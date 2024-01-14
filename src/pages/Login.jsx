@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react'
+import { Link,useNavigate } from 'react-router-dom';
 import image from '../images/login-image.jpg'
 import { ImProfile } from "react-icons/im";
 import { FaLock } from "react-icons/fa6";
@@ -8,6 +8,36 @@ import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
 function Login() {
+  const [typeState,setTypeState] = useState("password");
+  const [aarmanIDError, setAarmanIDError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const [aarmanID, setAarmanID] = useState("");
+ const [password, setPassword] = useState("");
+ const navigation = useNavigate();
+
+ const handleSubmit = (e) => {
+    e.preventDefault();
+    let isValid = true;
+    if (aarmanID.length <5) {
+      setAarmanIDError("Aarman ID must be more than 5 characters long.");
+      isValid = false;
+    } else {
+      setAarmanIDError("");
+    }
+
+    if (password.length < 8 || password.length > 20) {
+      setPasswordError("Password must be between 8 and 20 characters long.");
+      isValid = false;
+    } else {
+      setPasswordError("");
+    }
+
+    if (isValid) {
+      navigation('/maintree');
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center justify-center h-screen">
@@ -31,24 +61,36 @@ function Login() {
               type="text"
               className="p-2 outline-none font-secondary text-[20px]"
               placeholder="Aarman ID"
+              value={aarmanID}
+              onChange={(e) => setAarmanID(e.target.value)}
               required
             />
           </div>
+          {aarmanIDError && <p className="text-red-500">{aarmanIDError}</p>}
+
           <div className="flex items-center border-b-2 border-black mt-[20px] ml-[30px]">
             <FaLock size={20} />
             <input
               type="password"
               className="p-2 outline-none font-secondary text-[20px]"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
+          <label htmlFor='showpassword' className='font-secondary'>
+            <input onClick={() => typeState === "password" ? setTypeState("text") : setTypeState("password")} type="checkbox" id="showpassword" name="showpassword" />
+              Show Password
+          </label>
           </div>
+          {passwordError && <p className="text-red-500">{passwordError}</p>}
+
           <div>
-            <Link to='/maintree'
-              type="submit"
-              className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1] ">
+            <div
+              className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1] " 
+              onClick={handleSubmit}>
               Login
-            </Link>
+            </div>
           </div>
           <div className='flex flex-row space-x-4'>
           <h1 className='font-secondary text-[18px] pl-[40px] '>Or login with</h1>
