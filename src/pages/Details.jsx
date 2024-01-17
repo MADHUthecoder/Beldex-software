@@ -139,19 +139,18 @@ const handleSubmit = () => {
 
   return (
     <div className="flex">
-        <img src={image} alt="detailsimage" />
-    <div className="py-[15px] flex flex-col items-center">
-      
+        <img src={image} alt="detailsimage" className="h-[460px] px-[30px] pt-[80px]"/>
+    <div className="py-[15px] flex flex-col items-left px-[60px]">
       <div
-        className="border-2 border-black h-[80px] w-[240px] pt-[20px]"
+        className="border-2 border-black h-[80px] w-[300px] pt-[20px] ml-[25px]"
         style={{ backgroundColor: `${chooseColor}` }}
       >
         <input
           type="text"
           placeholder="User ID"
-          className=" pl-[15px] outline-none font-tertiary text-xl bg-transparent text-black placeholder-black"
+          className=" pl-[15px] outline-none font-tertiary text-xl font-semibold bg-transparent text-black placeholder-black w-[280px]"
         />
-        <div className="border-b-2 border-black w-[240px]"></div>
+        <div className="border-b-2 border-black w-[298px]"></div>
         <input
           type="text"
           placeholder="Position"

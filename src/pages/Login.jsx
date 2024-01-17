@@ -52,7 +52,7 @@ function Login() {
           </Link>
         </div>
         <div>
-          <h1 className="flex flex-col font-primary text-[50px] drop-shadow-lg mt-[60px] mr-[150px]">
+          <h1 className="flex flex-col font-primary text-[50px] drop-shadow-lg mt-[50px] mr-[150px]">
             Login
           </h1>
           <div className="flex items-center border-b-2 border-black mt-[20px] ml-[30px]">
@@ -84,7 +84,9 @@ function Login() {
           </label>
           </div>
           {passwordError && <p className="text-red-500">{passwordError}</p>}
-
+          <div className='font-secondary hover:text-red-500 hover:underline flex justify-end mt-[10px]'>
+            Forgot Password?
+          </div>
           <div>
             <div
               className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1] " 
