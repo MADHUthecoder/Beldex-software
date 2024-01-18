@@ -8,7 +8,7 @@ import Background from './pages/Background';
 import InfiniteCanvasBackground from './pages/InfiniteCanvas';
 import Example from './pages/InfiniteCanvas';
 import EditableTree from './pages/InfiniteCanvas';
-
+import Details from './pages/Details';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path='/' element={<Signup />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/maintree' element={<Maintree />}/>
+        <Route path='/details' element={<Details />}/>
         <Route path='/background' element={<Example />}/>
       </Routes>
     </div>
