@@ -138,7 +138,8 @@ const handleSubmit = () => {
 
 
   return (
-    <div className="flex">
+    <div className="w-screen">
+    <div className="flex justify-center h-screen items-center">
         <img src={image} alt="detailsimage" className="h-[460px] px-[30px] pt-[80px]"/>
     <div className="py-[15px] flex flex-col items-left px-[60px]">
       <div
@@ -297,6 +298,7 @@ const handleSubmit = () => {
         </button>
       </div>
     </div>
+     </div>
      </div>
   );
 }

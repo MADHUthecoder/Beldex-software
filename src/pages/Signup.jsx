@@ -58,12 +58,12 @@ function Signup() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col justify-center items-center">
         <img
           src={image}
           alt="beldex signup"
-          className="h-[400px] w-[415px] ml-[275px] mt-[85px]"
+          className="h-[400px] w-[415px] ml-[25px] mt-[85px]"
         />
         <Link to='/login' className="font-secondary text-[15px] pl-[207px] pt-[5px] underline underline-offset-4 hover:text-red-500">
           I am already a member
