@@ -1,22 +1,24 @@
 import React,{useState} from 'react'
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,Navigate,useNavigate } from 'react-router-dom';
 import image from '../images/login-image.jpg'
 import { ImProfile } from "react-icons/im";
 import { FaLock } from "react-icons/fa6";
-import { FaEnvelope } from "react-icons/fa";
-import { FaSquareFacebook } from "react-icons/fa6";
+import { IoLogoGoogle } from "react-icons/io";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { doSignInWithEmailAndPassword } from '../firebase/auth';
+import { useAuth } from '../contexts/authContext';
 
 function Login() {
+  const { userLoggedIn }= useAuth()
   const [typeState,setTypeState] = useState("password");
   const [aarmanIDError, setAarmanIDError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
+  const [isSigningIn, setIsSigningIn] = useState(false)
   const [aarmanID, setAarmanID] = useState("");
  const [password, setPassword] = useState("");
  const navigation = useNavigate();
 
- const handleSubmit = (e) => {
+ const handleSubmit = async(e) => {
     e.preventDefault();
     let isValid = true;
     if (aarmanID.length <5) {
@@ -33,6 +35,11 @@ function Login() {
       setPasswordError("");
     }
 
+    if (!isSigningIn){
+      setIsSigningIn(true)
+      await doSignInWithEmailAndPassword(aarmanID, password)
+    }
+
     if (isValid) {
       navigation('/maintree');
     }
@@ -40,8 +47,9 @@ function Login() {
 
   return (
     <div>
-      <div className="flex items-center justify-center h-screen">
-        <div className="flex flex-col justify-center items-center">
+      {userLoggedIn && (<Navigate to={'/login'} replace={true} />)}
+      <div className="flex items-center justify-center">
+        <div className="flex flex-col justify-center items-center mt-[35px]">
           <img
             src={image}
             alt="beldex signup"
@@ -97,8 +105,8 @@ function Login() {
           <div className='flex flex-row space-x-4'>
           <h1 className='font-secondary text-[18px] pl-[40px] '>Or login with</h1>
           <div className='flex pt-[25px]'></div>
-          <FaEnvelope size={25}/>
-          <FaSquareFacebook size={25}/>
+
+          <IoLogoGoogle size={25}/>
           <FaSquareXTwitter size={25}/>
           </div>
           </div>

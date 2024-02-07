@@ -4,11 +4,14 @@ import { FaUser } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { ImProfile } from "react-icons/im";
 import { FaLock } from "react-icons/fa6";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
+import { useAuth } from '../contexts/authContext';
+
 
 function Signup() {
  const [typeState,setTypeState] = useState("password");
-
+ const [isRegistering, setIsRegistering] = useState(false);
  const [nameError, setNameError] = useState("");
  const [emailError, setEmailError] = useState("");
  const [aarmanIDError, setAarmanIDError] = useState("");
@@ -20,7 +23,7 @@ function Signup() {
  const [password, setPassword] = useState("");
  const navigation = useNavigate();
 
- const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
     let isValid = true;
 
@@ -52,29 +55,34 @@ function Signup() {
       setPasswordError("");
     }
 
+    if (!isRegistering){
+      setIsRegistering(true)
+      await doCreateUserWithEmailAndPassword(email, password)
+    }
+
     if (isValid) {
       navigation('/maintree');
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <div className="flex flex-col justify-center items-center">
         <img
           src={image}
           alt="beldex signup"
-          className="h-[400px] w-[415px] ml-[25px] mt-[85px]"
+          className="h-[400px] w-[415px] ml-[25px]"
         />
-        <Link to='/login' className="font-secondary text-[15px] pl-[207px] pt-[5px] underline underline-offset-4 hover:text-red-500">
+        <Link to='/login' className="font-secondary text-[15px] pt-[5px] underline underline-offset-4 hover:text-red-500">
           I am already a member
         </Link>
       </div>
       <div>
-        <h1 className="flex flex-col font-primary text-[50px] drop-shadow-lg mt-[60px] mr-[150px]">
+        <h1 className="flex flex-col font-primary text-[50px] drop-shadow-lg mr-[150px] mt-[15px]">
           Sign Up
         </h1>
         
-        <div className="flex items-center border-b-2 border-black mt-[40px] ml-[30px]">
+        <div className="flex items-center border-b-2 border-black mt-[15px] ml-[30px]">
           <FaUser size={20} />
           <input
             type="text"
@@ -140,6 +148,7 @@ function Signup() {
         </div>
       </div>
     </div>
+  
   );
 }
 

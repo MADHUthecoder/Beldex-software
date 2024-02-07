@@ -9,10 +9,12 @@ import InfiniteCanvasBackground from './pages/InfiniteCanvas';
 import Example from './pages/InfiniteCanvas';
 import EditableTree from './pages/InfiniteCanvas';
 import Details from './pages/Details';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Signup />}/>
         <Route path='/login' element={<Login />}/>
