@@ -10,6 +10,7 @@ import { useAuth } from '../contexts/authContext';
 
 
 function Signup() {
+  const { userLoggedIn } = useAuth()
  const [typeState,setTypeState] = useState("password");
  const [isRegistering, setIsRegistering] = useState(false);
  const [nameError, setNameError] = useState("");
@@ -60,7 +61,7 @@ function Signup() {
       await doCreateUserWithEmailAndPassword(email, password)
     }
 
-    if (isValid) {
+    if (isValid && userLoggedIn) {
       navigation('/maintree');
     }
   };

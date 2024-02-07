@@ -40,7 +40,7 @@ function Login() {
       await doSignInWithEmailAndPassword(aarmanID, password)
     }
 
-    if (isValid) {
+    if (isValid & userLoggedIn) {
       navigation('/maintree');
     }
   };

@@ -10,10 +10,12 @@ import Example from './pages/InfiniteCanvas';
 import EditableTree from './pages/InfiniteCanvas';
 import Details from './pages/Details';
 import Navbar from './components/Navbar';
+import { AuthProvider } from './contexts/authContext';
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <Navbar />
       <Routes>
         <Route path='/' element={<Signup />}/>
@@ -22,6 +24,7 @@ function App() {
         <Route path='/details' element={<Details />}/>
         <Route path='/background' element={<Example />}/>
       </Routes>
+      </AuthProvider>
     </div>
   );
 }
