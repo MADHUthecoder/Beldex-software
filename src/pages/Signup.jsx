@@ -9,6 +9,7 @@ import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
 import { useAuth } from '../contexts/authContext';
 
 
+
 function Signup() {
   const { userLoggedIn } = useAuth()
  const [typeState,setTypeState] = useState("password");
@@ -65,6 +66,7 @@ function Signup() {
       navigation('/maintree');
     }
   };
+  console.log(userLoggedIn)
 
   return (
     <div className="flex justify-center items-center">
@@ -149,7 +151,6 @@ function Signup() {
         </div>
       </div>
     </div>
-  
   );
 }
 
