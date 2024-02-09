@@ -138,9 +138,9 @@ function Login() {
               </label>
             </div>
             {passwordError && <p className="text-red-500">{passwordError}</p>}
-            <div className="font-secondary hover:text-red-500 hover:underline flex justify-end mt-[10px]">
+            <Link to='/forgotpassword' className="font-secondary hover:text-red-500 hover:underline flex justify-end mt-[10px]">
               Forgot Password?
-            </div>
+            </Link>
             <div>
               <div
                 className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl mx-[150px] my-[30px] hover:bg-[#338de1] "
