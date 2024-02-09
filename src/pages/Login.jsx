@@ -104,7 +104,7 @@ function Login() {
               <ImProfile size={20} />
               <input
                 type="text"
-                className="p-2 outline-none font-secondary text-[20px]"
+                className="p-2 outline-none font-secondary text-[20px] w-[350px]"
                 placeholder="Mail ID"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

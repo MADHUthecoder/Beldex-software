@@ -66,7 +66,7 @@ function Signup() {
       navigation('/maintree');
     }
   };
-  console.log(userLoggedIn)
+
 
   return (
     <div className="flex justify-center items-center">
@@ -89,7 +89,7 @@ function Signup() {
           <FaUser size={20} />
           <input
             type="text"
-            className="p-2 outline-none font-secondary text-[20px]"
+            className="p-2 outline-none font-secondary text-[20px] w-[350px]"
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -102,7 +102,7 @@ function Signup() {
           <CgMail size={20} />
           <input
             type="email"
-            className="p-2 outline-none font-secondary text-[20px]"
+            className="p-2 outline-none font-secondary text-[20px] w-[350px]"
             placeholder="Gmail ID"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -115,7 +115,7 @@ function Signup() {
           <ImProfile size={20} />
           <input
             type="text"
-            className="p-2 outline-none font-secondary text-[20px]"
+            className="p-2 outline-none font-secondary text-[20px] w-[350px]"
             placeholder="Aarman ID"
             value={aarmanID}
             onChange={(e) => setAarmanID(e.target.value)}
