@@ -14,10 +14,29 @@
             },
             "children": [
               {
-                "name": "Workers"
+                "name": "Workers",
+                "children":[
+                  {
+                    "name": "Sample",
+                    "children":[
+                      {"name":""},{"name":""}
+                    ]
+                  },
+                  {
+                    "name": "Sample2",
+                    "children":[
+                      {"name":"A"},{"name":"B"}
+                    ]
+                  }
+                ]
               },
               {
-                "name": "Supervisor"
+                "name": "Supervisor",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               }
             ]
           },
@@ -28,10 +47,20 @@
             },
             "children": [
               {
-                "name": "Workers"
+                "name": "Workers",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               },
               {
-                "name": "Supervisor"
+                "name": "Supervisor",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               }
             ]
           }
@@ -50,10 +79,20 @@
             },
             "children": [
               {
-                "name": "Salespeople"
+                "name": "Workers",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               },
               {
-                "name":"Sales Officer"
+                "name": "Supervisor",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               }
             ]
           },
@@ -64,10 +103,20 @@
             },
             "children": [
               {
-                "name": "Salespeople"
+                "name": "Workers",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               },
               {
-                "name":"Sales Officer"
+                "name": "Supervisor",
+                "children":[
+                  {
+                    "name": "Sample"
+                  }
+                ]
               }
             ]
           }

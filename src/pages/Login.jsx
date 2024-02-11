@@ -82,7 +82,7 @@ function Login() {
       <div>
         {/* {userLoggedIn && <Navigate to={"/maintree"} replace={true} />} */}
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center h-screen">
           <div className="flex flex-col justify-center items-center mt-[35px]">
             <img
               src={image}

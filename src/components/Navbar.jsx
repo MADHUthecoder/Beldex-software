@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='bg-[#245f9bcf] text-white flex flex-row font-tertiary p-[15px]'>
+    <div className='bg-[#245f9bcf] text-white flex flex-row items-center font-tertiary h-[100px] p-[15px] fixed w-full'>
     <div className=''>
         <h1>Logo</h1>
     </div>

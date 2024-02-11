@@ -69,7 +69,7 @@ function Signup() {
   console.log(userLoggedIn)
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col justify-center items-center">
         <img
           src={image}
