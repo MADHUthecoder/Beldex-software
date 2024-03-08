@@ -26,26 +26,32 @@ const Popup = ({ onClose }) => {
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
       }}
     >
-      <form >
-          <h2>Add New Item</h2>
-          <label>
+      <form className="flex flex-col justify-center items-center">
+          <h2 className="font-primary text-[30px]">Add a New Member</h2>
+          <label className="font-secondary font-semibold text-[20px]">
             Name:
             <input
               type="text"
+              className="p-2 outline-none font-secondary text-[20px] w-[350px]"
+              placeholder="Enter Name here"
               // value={name}
               // onChange={(e) => setName(e.target.value)}
             />
           </label>
-          <label>
-            Description:
+          <label className="font-secondary font-semibold text-[20px]">
+            Aarman ID:
             <input
               type="text"
+              className="p-2 outline-none font-secondary text-[20px] w-[350px]"
+              placeholder="Enter Aarman ID here"
               // value={description}
               // onChange={(e) => setDescription(e.target.value)}
             />
           </label>
-          <button type="submit">Add</button>
-      <button className="" onClick={onClose}>Save</button>
+          <div className="flex justify-center items-center">
+          <button type="submit" className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl my-[10px] hover:bg-[#338de1]">Add</button>
+      <button className="flex justify-center items-center h-[30px] w-[70px] font-bold bg-[#245f9bcf] shadow-inner text-white font-secondary rounded-xl ml-[20px] my-[10px] hover:bg-[#338de1]" onClick={onClose}>Save</button>
+      </div>
       </form>
     </div>
   );

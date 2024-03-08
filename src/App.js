@@ -12,6 +12,7 @@ import Details from './pages/Details';
 import Navbar from './components/Navbar';
 import { AuthProvider } from './contexts/authContext';
 import ForgotPass from './pages/ForgotPass';
+import Portal from './pages/Portal';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />}/>
         <Route path='/maintree' element={<Maintree />}/>
         <Route path='/details' element={<Details />}/>
+        <Route path="/viewportal" element={<Portal />} />
         <Route path='/forgotpassword' element={<ForgotPass />}/>
         <Route path='/background' element={<Example />}/>
       </Routes>
